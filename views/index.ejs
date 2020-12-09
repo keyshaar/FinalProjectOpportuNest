@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>OpportuNest</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <style>
+      *{
+        box-sizing: border-box;
+        margin:0;
+        padding:0;
+      }
+
+      html{
+        scroll-behavior: smooth;
+      }
+
+      body{
+        position: relative;
+        font-family: Gotham, sans-serif;
+        background: linear-gradient(178.45deg, rgba(255, 255, 255, 0) -38.18%, #09386E 263.94%), #FFFFFF;
+        line-height: 1.5;
+        height: 100vh;
+        width: 100%;
+      }
+
+      /* NAVIGATION BAR */
+      .nav-container{
+        height: 145px;
+      }
+
+      .wrapper{
+        max-width: 1336px;
+        margin: auto;
+      }
+
+      .navbar{
+        top: 0;
+        z-index: 1;
+        display: flex;
+        width: 100%;
+        height: 140px;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .navbar ul{
+        display: flex;
+        list-style: none;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 20px;
+        margin-inline-end: 40px;
+        padding-inline-start: 40px;
+        max-height: 40px;
+      }
+
+      .navbar .logo{
+        justify-content: center;
+        width: 107px;
+        height: 107px;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      .nav-items-1 li {
+        list-style: none;
+        text-align: center;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      .nav-items-2 li{
+        list-style: none;
+        text-align: center;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      .nav-items-1 li a{
+        font-size: 17px;
+        color: #092F5A;
+        text-decoration: none;
+      }
+
+      .nav-items-2 li a{
+        font-size: 17px;
+        color: #092F5A;
+        text-decoration: none
+      }
+
+      .nav-items-2 li a.btn{
+          border-radius: 44px;
+        }
+
+      a.btn{
+        background: #F6C75D;
+        padding: 15px 22px;
+        filter: drop-shadow(3px 4px 4px rgba(0, 0, 0, 0.25));
+        transition: 300ms;
+      }
+
+      .nav-items-1 li a:hover{
+        color: white;
+      }
+
+      .nav-items-2 li a:hover{
+        color: white;
+      }
+
+      a.btn:hover{
+        transform: translateY(-8px);
+      }
+
+
+      /*SECTIONS*/
+      .container{
+        width: 100%
+        height: 100%
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+      }
+
+      section#home{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+      }
+
+      section#about{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) -140.33%, #092F5A 172.96%), #FFFFFF;
+      }
+
+      section#courses{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(181.56deg, rgba(255, 255, 255, 0) -382.57%, #092F5A 119.35%), #FFFFFF;
+      }
+
+      section#contact{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        height: 120vh;
+        background: #17385E;
+      }
+
+      /* FORMATTING */
+      .header-container{
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        display: flex;
+        align-items: center;
+        height: calc(100vh - 145px);
+      }
+
+      .contact-container{
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        height: 300px;
+      }
+
+      header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header h1{
+        font-weight: normal;
+        width: 600px;
+        font-size: 50px;
+        line-height: 70px;
+        text-align: center;
+        color: #092F5A;
+        margin-block-start: 0.5em;
+        margin-block-end: 0.5em;
+        margin-inline-start: 0px;
+        margin-inline-end: 30px;
+      }
+
+      header h2{
+        font-weight: normal;
+        width: 600px;
+        font-size: 50px;
+        line-height: 70px;
+        text-align: left;
+        color: #092F5A;
+        margin-block-start: 0.5em;
+        margin-block-end: 0.5em;
+        margin-inline-start: 0px;
+        margin-inline-end: 30px;
+      }
+
+      header h3{
+        font-weight: normal;
+        width: 1300px;
+        font-size: 50px;
+        line-height: 70px;
+        text-align: center;
+        color: white;
+        margin-block-start: 0.5em;
+        margin-block-end: 0.5em;
+        margin-inline-start: 0px;
+        margin-inline-end: 30px;
+      }
+
+      header h4{
+        font-size: 35px;
+        line-height: 25px;
+        text-align: center;
+        color: white;
+        text-decoration: none;
+        margin-left: 300px;
+        margin-right: 300px;
+        border-radius: 44px;
+        filter: drop-shadow(-7px 8px 4px rgba(0, 0, 0, 0.25));
+        padding: 20px 25px;
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+        margin-inline-start: 30px;
+        margin-inline-end: 30px;
+      }
+
+      header p1{
+        width: 582px;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 30px;
+        display: flex;
+        align-items: flex-end;
+        text-align: center;
+        color: #092F5A;
+        margin-block-start: 0.5em;
+        margin-block-end: 0.5em;
+        margin-inline-start: 0px;
+        margin-inline-end: 30px;
+        margin-bottom: 30px;
+      }
+
+      header p2{
+        width: 582px;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 25px;
+        display: flex;
+        align-items: flex-end;
+        text-align: left;
+        color: white;
+        margin-block-start: 0.5em;
+        margin-block-end: 0.5em;
+        margin-inline-start: 0px;
+        margin-inline-end: 30px;
+        margin-bottom: 30px;
+      }
+
+      header p3{
+        width: 582px;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 25px;
+        display: flex;
+        align-items: flex-end;
+        text-align: left;
+        color: white;
+        margin-block-start: 0.5em;
+        margin-block-end: 0.5em;
+        margin-inline-start: 0px;
+        margin-inline-end: 30px;
+        margin-bottom: 30px;
+      }
+
+      header p4{
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 25px;
+        text-align: center;
+        color: white;
+      }
+
+      header p5{
+        width: 582px;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 25px;
+        display: flex;
+        align-items: flex-end;
+        text-align: left;
+        color: white;
+        margin-block-start: 0.5em;
+        margin-block-end: 0.5em;
+        margin-inline-start: 0px;
+        margin-inline-end: 30px;
+        margin-bottom: 30px;
+      }
+
+      header a{
+        font-size: 26px;
+        line-height: 25px;
+        text-align: center;
+        color: #092F5A;
+        text-decoration: none;
+        margin-left: 5px;
+        margin-right: 5px;
+
+        background: #F6C75D;
+        border-radius: 44px;
+        filter: drop-shadow(-7px 8px 4px rgba(0, 0, 0, 0.25));
+        padding: 20px 25px;
+        display: inline-block;
+        transition: 300ms;
+      }
+      header a:hover{
+        transform: translateY(-8px);
+      }
+
+      a.c1 {
+          background: transparent;
+          padding: 15px 22px;
+          filter: drop-shadow(3px 4px 4px rgba(0, 0, 0, 0.25));
+          transition: 300ms;
+       }
+       a.c1:hover {
+	       background-color:transparent;
+       }
+       a.c1:active {
+	       position:relative;
+	       top:1px;
+       }
+
+
+      .links li{
+        list-style: none;
+        display: inline-block;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+        margin-inline-start: 0px;
+      }
+      .links a img{
+        margin-bottom: 10px;
+      }
+      .links p a {
+        text-decoration: none;
+        font-size: 20px;
+        color: #092F5A;
+        border-radius: 44px;
+        filter: drop-shadow(-7px 8px 4px rgba(0, 0, 0, 0.25));
+        padding: 10px 15px;
+        background-color: #F6C75D;
+        transition: 300ms;
+      }
+      .links p a:hover{
+        color: white;
+      }
+
+       /* GO TO TOP BUTTON*/
+       #topBtn {
+         font-size: 25px;
+         font-weight: bold;
+         background-color: #F6C75D;
+         color: #092F5A;
+         display: none;
+         position: fixed;
+         bottom: 20px;
+         right: 30px;
+         z-index: 99;
+         border: none;
+         outline: none;
+         cursor: pointer;
+         padding-top: 12px;
+         padding-left: 15px;
+         padding-right: 15px;
+         padding-bottom: 2px;
+         border-radius: 10px;
+         transition: 300ms;
+       }
+       #topBtn:hover {
+         background-color: #555;
+       }
+    </style>
+
+  <head>
+  <body>
+    <div class="container">
+      <div class="nav-container">
+        <div class="wrapper">
+          <nav class="navbar">
+            <ul class="nav-items-1">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <div class="logo">
+              <a href="#"><img src="logo.png"></a>
+            </div>
+            <ul class="nav-items-2">
+              <li><a href="/logout">Log Out</a></li>
+              <li><a href="#courses" class="btn">Courses</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <section id="home">
+        <div class="header-container">
+          <div class="wrapper">
+            <header>
+              <div class="home-content">
+                <h1>Prepare your career journey with us.</h1>
+                <p1>“Unleashing the Indonesian youth potential through a nest of endless opportunities”</p1>
+                <a href="#courses">START YOUR JOURNEY NOW!</a>
+              </div>
+              <div class="home-image">
+                <img src="girl.png" width=400px height=400px>
+              </div>
+            </header>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="header-container">
+          <div class="wrapper">
+            <header>
+              <div class="about-content">
+                <h2>About Us</h2>
+                <p2>OpportuNest is an online platform that advocates for the importance of Indonesian youth to become lifelong learners through intensive mentoring through the provision of informative educational resources including internship opportunities, volunteer work and more.</p2>
+              </div>
+              <div class="about-image">
+                <img src="people.png" width=400px height=400px>
+              </div>
+            </header>
+          </div>
+        </div>
+      </section>
+
+      <section id="courses">
+        <div class="header-container">
+          <div class="wrapper">
+            <header>
+              <div class="courses-content">
+                <h3>Courses</h3>
+                  <div class="course-list">
+                    <a href="Videocv.html" class="c1"><img src="cvresume.png"></a>
+                    <a href="videointerview.html" class="c1"><img src="interview.png"></a>
+                    <a href="videoidp.html" class="c1"><img src="idp.png"></a>
+                    <a href="videomotlet.html" class="c1"><img src="motlet.png"></a>
+                  </div>
+              </div>
+            </header>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <header>
+          <div class="contact-container">
+            <div class="wrapper">
+              <br><br><br><br><br><br><br>
+              <h4>Contact Us!</h4>
+            <div/
+          </div>
+        </header>
+        <div class="contactbtn">
+          <ul class="links">
+            <li class="ig">
+              <a href="https://www.instagram.com/opportunest/?hl=en"> <img src="instagram.png" width=80px height=80px></a>
+              <p><a href="https://www.instagram.com/opportunest/?hl=en">Visit our Instagram page!</a></p>
+            </li>
+            <li class="linkedin">
+              <a href="https://id.linkedin.com/company/opportunest"><img src="linkedin.png" width=80px height=80px></a>
+              <p>  <a href="https://id.linkedin.com/company/opportunest">Visit our LinkedIn page!</a></p>
+            </li>
+            <li class="youtube">
+              <a href="https://www.youtube.com/channel/UCaAdNu7ptgUhuB59jU77szg/about"><img src="youtube.png" width=80px height=80px></a>
+              <p><a href="https://www.youtube.com/channel/UCaAdNu7ptgUhuB59jU77szg/about">Visit our YouTube page!</a></p>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <!-- GO TO TOP BUTTON -->
+    <button onclick="topFunction()" id="topBtn" title="Go to top">^</button>
+
+    <!-- JAVASCRIPT GO TO TOP BUTTON -->
+    <script>
+      topButton = document.getElementById("topBtn");
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          topButton.style.display = "block";
+        } else {
+          topButton.style.display = "none";
+        }
+      }
+
+      function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+
+  </body>
+</html>
